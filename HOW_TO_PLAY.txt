@@ -1,0 +1,211 @@
+========================================
+	  GODEW VALLEY - HOW TO PLAY
+========================================
+
+--- WELCOME ---
+	You've just arrived at your new farm! Your goal is to
+	build a thriving homestead — grow crops, raise resources,
+	buy upgrades, and defend your farm from pesky blobs.
+
+	You start with some basic supplies: Wood, Apples, Fish,
+	and a few SEEDS for each crop type (Tomato, Corn,
+	Pumpkin, and Wheat). Use these to get started!
+
+
+--- CONTROLS ---
+
+	MOVEMENT
+		W / Up Arrow      Move up
+		A / Left Arrow    Move left
+		S / Down Arrow    Move down
+		D / Right Arrow   Move right
+
+	TOOLS
+		Q                 Cycle tools backward
+		E                 Cycle tools forward
+		Space             Use current tool / Interact with objects
+		C                 Cycle seed type (when Seed tool is selected)
+		T                 Toggle between unlocked hat styles
+
+	MACHINES
+		M                 Enter / Exit build mode
+		Q / E             Cycle machine selection (while in build mode)
+		Space             Place selected machine at cursor
+
+	OTHER
+		N                 Toggle plant health/growth overlay
+		Escape            Close the shop (when inside a shop)
+
+
+--- TOOLS ---
+
+	AXE
+		Use on trees to chop them. Each hit weakens the tree
+		and may knock down an apple. After enough hits the tree
+		falls, leaving a stump, and you receive wood.
+
+	HOE
+		Use on grassy farmable tiles to till the soil. You need
+		tilled soil before you can plant anything.
+
+	WATER
+		Use on tilled soil to water it. Crops only grow on
+		watered soil when you sleep and advance the day. If it
+		rains, all tilled soil gets watered automatically.
+
+	SEED
+		Use on tilled, empty soil to plant the currently
+		selected seed. Press C to cycle through seed types:
+		Tomato, Corn, Pumpkin, and Wheat. Planting a seed
+		costs 1 of that crop from your inventory.
+
+	SWORD
+		Swing at blobs (enemies) that approach your crops.
+		Each hit pushes them back and deals damage. Three hits
+		will destroy a blob.
+
+	FISHING ROD
+		Use while facing a water tile (not grass/soil) to
+		start the fishing minigame.
+
+
+--- HOW TO FARM (STEP BY STEP) ---
+
+	1. Walk up to a grass tile and use the HOE to till soil.
+	2. Use the WATER can on the tilled soil (or let rain do it).
+	3. Select the SEED tool, press C to pick a crop, then
+		use it on the watered soil to plant.
+	4. Go inside your house and interact with the BED (press
+		Space while facing it) to sleep and advance to the
+		next day.
+	5. Each new day, watered crops grow one stage. Crops that
+		were NOT watered will decay — if they decay too many
+		days in a row, they die!
+	6. When a crop is fully grown, simply walk over it to
+		harvest. You'll receive 2-4 of that crop item.
+
+	IMPORTANT: Planting costs 1 seed from your inventory.
+	Make sure you have enough of the crop you want to plant!
+
+
+--- HOW TO FISH ---
+
+	1. Equip the FISHING ROD (cycle tools with Q/E).
+	2. Face a water tile (any tile without grass on it).
+	3. Press Space to cast your line — the fishing minigame
+		will appear.
+	4. A progress bar and a bouncing fish icon will show up.
+		Press Space repeatedly to move your catch bar upward.
+	5. Keep the fish icon INSIDE the catch bar to fill the
+		progress meter. If you let it escape, the meter drops.
+	6. Fill the bar to 100% to catch a fish! If it drops to
+		0%, you lose the fish.
+
+
+--- TREES & REGROWTH ---
+
+	Trees can be chopped by hitting them repeatedly with the
+	AXE. After about 3 hits, the tree is fully chopped down
+	and turns into a stump. You'll get wood and possibly
+	apples along the way.
+
+	DON'T WORRY — chopped trees REGROW! After 3 in-game days
+	(sleeping in the bed), the stump disappears and a brand
+	new tree takes its place, complete with fresh apples.
+	So chop freely and come back later
+
+
+--- MACHINES ---
+
+	Press M to enter build mode. A preview icon follows your
+	cursor showing where the machine will be placed. Use Q/E
+	to cycle machines, Space to place, and M again to exit.
+
+	SPRINKLER
+		Automatically waters all 8 surrounding soil tiles (and
+		its own tile) each day. Great for hands-free farming!
+		Cost: 30 Tomatoes + 20 Wheat
+
+	FISHER
+		Place near water (on a coast tile). It will automatically
+		catch fish over time — you can see the progress bar
+		filling up. Each time it fills, you get 1 fish.
+		Cost: 25 Wood + 15 Fish
+
+	SCARECROW
+		Automatically shoots projectiles at nearby blobs to
+		protect your crops. Has a limited range.
+		Cost: 15 Pumpkins + 15 Corn
+
+	DELETE
+		Select this "machine" to remove a placed machine. Walk
+		up to the machine you want to delete and press Space.
+		Always available — no cost.
+
+
+--- SHOPS & UPGRADES ---
+
+	There are NPC characters on the map. Walk up to one and
+	press Space to talk. Keep pressing Space to cycle through
+	their dialog. After the dialog ends, their shop opens.
+
+	HAT SHOP
+		Buy new hat styles using your harvested items. Each hat
+		is purely cosmetic. Press T in normal mode to cycle
+		through your unlocked hats.
+
+	MACHINE SHOP
+		Unlock new machine types. Once unlocked, they appear
+		in your build mode rotation (M key).
+
+	Press Escape to close a shop when you're done.
+	When all items in a shop are purchased, the NPC will
+	show a special "finished" message instead.
+
+
+--- BLOBS (ENEMIES) ---
+
+	Blobs spawn periodically and move toward your crops.
+	If a blob reaches a plant, it will damage it! Too much
+	damage and the plant dies.
+
+	You can fight blobs with:
+		* SWORD — swing at them (3 hits to kill)
+		* SCARECROW — automatically shoots nearby blobs
+
+	Blobs explode when defeated.
+
+
+--- HOUSE ---
+
+	Walk into your house and the roof becomes transparent so
+	you can see inside. Inside you'll find:
+
+		BED — Interact with it (Space) to sleep and advance to
+			the next day. All daily events trigger: crops grow
+			or decay, machines activate, rain may come, and
+			trees may regrow.
+
+		TV  — Interact with it to check TOMORROW'S weather
+			forecast. If it shows rain, all your tilled soil
+			will be watered automatically the next day — you
+			can skip manual watering!
+
+
+--- TIPS ---
+
+	* Check the TV every day — if rain is coming, save your
+		energy and skip watering!
+	* Rain waters ALL tilled soil, not just planted tiles.
+	* Place sprinklers early to reduce daily chores.
+	* Protect valuable crops with scarecrows — blobs can
+		undo days of progress!
+	* Trees regrow every 3 days — don't worry about running
+		out of wood.
+	* Build fishers near water to generate passive fish income.
+	* You start with 1 Wood, 3 Apples, 4 Fish, and 5 of each
+		starting Seed type — plant them carefully!
+
+	========================================
+			Have fun farming! 🌱
+	========================================
