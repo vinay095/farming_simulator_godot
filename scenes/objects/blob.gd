@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var direction: Vector2
-var speed := 20
+var speed := 15
 var push_distance := 130
 var push_direction: Vector2
 var health := 3:
