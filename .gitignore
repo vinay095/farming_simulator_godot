@@ -12,6 +12,7 @@
 output/
 build/
 exports/
+android/
 
 # OS-specific junk files
 .DS_Store
@@ -21,3 +22,4 @@ Thumbs.db
 *.log
 icon.svg.import
 .editorconfig
+export_presets.cfg
