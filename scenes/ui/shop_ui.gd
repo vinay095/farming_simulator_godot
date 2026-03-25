@@ -1,10 +1,33 @@
 extends Control
 
 var shop_button_scene = preload("res://scenes/ui/shop_button.tscn")
+var _close_btn: Button
 signal close
+
+func _ready() -> void:
+	# Create a mobile-friendly close button at the top-right
+	_close_btn = Button.new()
+	_close_btn.text = "✕"
+	_close_btn.custom_minimum_size = Vector2(48, 48)
+	_close_btn.add_theme_font_size_override("font_size", 24)
+	_close_btn.anchors_preset = Control.PRESET_TOP_RIGHT
+	_close_btn.offset_left = -64.0
+	_close_btn.offset_top = 8.0
+	_close_btn.offset_right = -8.0
+	_close_btn.offset_bottom = 56.0
+	_close_btn.pressed.connect(_on_close_pressed)
+	add_child(_close_btn)
+	_close_btn.hide()
+
+
+func _on_close_pressed() -> void:
+	close.emit()
+	get_tree().get_first_node_in_group("ResourceUI").hide()
+
 
 func reveal(shop_type: Enum.Shop = Enum.Shop.HAT):
 	show()
+	_close_btn.show()
 	for child in $GridContainer.get_children():
 		child.queue_free()
 	var unlocked = Data.shop_connection[shop_type]['tracker']

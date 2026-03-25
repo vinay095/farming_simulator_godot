@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/mobile_controls.gd" id="1_mc"]
+[ext_resource type="PackedScene" path="res://scenes/ui/virtual_joystick.tscn" id="2_vj"]
+[ext_resource type="PackedScene" path="res://scenes/ui/mobile_hotbar.tscn" id="3_hb"]
+[ext_resource type="Script" path="res://scenes/ui/touch_interactor.gd" id="4_ti"]
+
+[node name="MobileControls" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_mc")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VirtualJoystick" parent="Control" instance=ExtResource("2_vj")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -136.0
+offset_right = 136.0
+offset_bottom = -16.0
+grow_vertical = 0
+
+[node name="MobileHotbar" parent="Control" instance=ExtResource("3_hb")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TouchInteractor" type="Node" parent="."]
+script = ExtResource("4_ti")
