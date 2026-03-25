@@ -4,6 +4,7 @@ var plant_scene = preload("res://scenes/objects/plant.tscn")
 var plant_info_scene = preload("res://scenes/ui/plant_info.tscn")
 var projectile_scene = preload("res://scenes/machines/projectile.tscn")
 var blob_scene = preload("res://scenes/objects/blob.tscn")
+var mobile_controls_scene = preload("res://scenes/ui/mobile_controls.tscn")
 var machine_scenes = {
 	Enum.Machine.SPRINKLER: preload("res://scenes/machines/sprinkler.tscn"),
 	Enum.Machine.SCARECROW: preload("res://scenes/machines/scare_crow.tscn"),
@@ -104,6 +105,10 @@ func _ready() -> void:
 	Data.forecast_rain = [true, false].pick_random()
 	for character in get_tree().get_nodes_in_group('Characters'):
 		character.connect('open_shop', open_shop)
+	# Initialize mobile touch controls
+	var mobile_controls = mobile_controls_scene.instantiate()
+	add_child(mobile_controls)
+	mobile_controls.setup(player, player.get_node("Camera2D"))
 
 
 func _process(_delta: float) -> void:

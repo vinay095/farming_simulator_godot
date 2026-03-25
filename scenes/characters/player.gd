@@ -59,12 +59,9 @@ func get_basic_input():
 	if Input.is_action_just_pressed("tool_forward") or Input.is_action_just_pressed("tool_backward"):
 		var dir = Input.get_axis("tool_backward", "tool_forward")
 		current_tool = posmod(current_tool + int(dir), Enum.Tool.size()) as Enum.Tool
-		$ToolUI.reveal(true)
-		get_tree().get_first_node_in_group("ResourceUI").visible = current_tool == Enum.Tool.SEED
 	
 	if Input.is_action_just_pressed("seed_forward"):
 		current_seed = posmod(current_seed + 1, Enum.Seed.size()) as Enum.Seed
-		$ToolUI.reveal(false)
 	
 	if Input.is_action_just_pressed("action"):
 		if not $RayCast2D.get_collider():
@@ -167,6 +164,32 @@ func get_machine_coord() -> Vector2i:
 	coord.x += -1 if pos.x < 0 else 0
 	coord.y += -1 if pos.y < 0 else 0
 	return coord * Data.TILE_SIZE + Vector2i(8,8)
+
+
+## Called by touch_interactor to perform a tool action at a world position.
+## Faces the player toward the target, switches to the appropriate tool,
+## and plays the tool animation. The animation's method track calls
+## tool_use_emit() which fires the tool_use signal → level handles the hit.
+func touch_action(target_pos: Vector2, tool: Enum.Tool = current_tool) -> void:
+	if not can_move or current_state != Enum.State.DEFAULT:
+		return
+	# Switch to the requested tool
+	current_tool = tool
+	# Face toward the target
+	var dir = (target_pos - position).normalized()
+	last_direction = dir
+	var ray_y = int(dir.y) if not dir.x else 0
+	$RayCast2D.target_position = Vector2(dir.x, ray_y).normalized() * 20
+	# Update animation blend positions so the correct directional animation plays
+	var direction_animation = Vector2(round(dir.x), round(dir.y))
+	$Animation/AnimationTree.set("parameters/MoveStateMachine/Idle/blend_position", direction_animation)
+	$Animation/AnimationTree.set("parameters/MoveStateMachine/Walk/blend_position", direction_animation)
+	for animation in Data.TOOL_STATE_ANIMATIONS.values():
+		var animation_name: String = "parameters/ToolStateMachine/"+ animation +"/blend_position"
+		$Animation/AnimationTree.set(animation_name, direction_animation)
+	# Play tool animation — the animation method track calls tool_use_emit()
+	tool_state_machine.travel(Data.TOOL_STATE_ANIMATIONS[current_tool])
+	$Animation/AnimationTree.set("parameters/ToolOneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 
 
 func _on_step_timer_timeout() -> void:
